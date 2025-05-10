@@ -16,6 +16,7 @@ import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import axiosInstance from "../axios/axiosInstance";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const Signup = () => {
       });
 
       localStorage.setItem("token", res.data.token);
-      alert("Signup successful!");
+      toast.success("Signup  Successful!");
       navigate("/");
       // Optionally redirect to login or dashboard here
     } catch (err: any) {

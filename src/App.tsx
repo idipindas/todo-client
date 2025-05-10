@@ -5,6 +5,7 @@ import Signup from "./pages/Siginup";
 import Layout from "./components/Layout";
 import MyList from "./pages/MyList";
 import PrivateRoute from "./utils/PrivateRoute";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             </Route>
           </Route>
         </Routes>
+        <ToastContainer />
       </BrowserRouter>
     </>
   );

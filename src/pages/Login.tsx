@@ -16,6 +16,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 import axiosInstance from "../axios/axiosInstance";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -33,8 +34,8 @@ const Login = () => {
         password,
       });
       localStorage.setItem("token", res.data.token);
-      navigate('/my-list')
-      alert("Login successful!");
+      navigate("/my-list");
+      toast.success("Login Successful!");
     } catch (err: any) {
       setError(err.response?.data?.msg || "Login failed");
     } finally {
